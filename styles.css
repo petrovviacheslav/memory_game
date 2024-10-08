@@ -1,0 +1,115 @@
+body {
+
+
+    font-family: Verdana, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --border-radius-value: 10px;
+    --box-shadow-value: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --light-grey: #c0c0c0;
+    --green: #4caf50;
+}
+
+.card {
+    background: #FEA176;
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-value);
+    cursor: pointer;
+    box-shadow: var(--box-shadow-value);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+
+    transition: all 600ms;
+
+    & span {
+        visibility: hidden;
+        transform: rotateY(-180deg);
+    }
+
+    &.flipped {
+        background: white;
+        transform: rotateY(180deg);
+
+        & span {
+            visibility: visible;
+        }
+
+    }
+
+    &.matched {
+        background: var(--green);
+        cursor: default;
+    }
+}
+
+.controls {
+    border-radius: var(--border-radius-value);
+    box-shadow: var(--box-shadow-value);
+    width: 80dvw;
+    padding: 20px;
+    border: 1px solid var(--light-grey);
+    display: flex;
+    align-items: center;
+    margin: 5px auto 40px;
+
+
+    .button-success {
+        margin-left: auto;
+    }
+}
+
+label {
+    font-size: 18px;
+    margin-left: 5px;
+
+}
+
+input {
+    width: 100px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--light-grey);
+    margin-right: 40px;
+}
+
+.button-success {
+    background: var(--green);
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius-value);
+    transition: all 0.3ms;
+
+    &:hover {
+        background: #3b8c3f;
+    }
+}
+
+.board {
+    display: grid;
+    gap: 10px;
+    margin: 5px auto 40px;
+}
+
+.counter {
+    border-radius: var(--border-radius-value);
+    box-shadow: var(--box-shadow-value);
+    width: 40dvw;
+    padding: 20px;
+    border: 1px solid var(--light-grey);
+    text-align: center;
+    margin: 5px auto;
+
+    visibility: hidden;
+}
